@@ -3,11 +3,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 from numpy.random import default_rng
 
+def show_lattice(lattice:np.array) -> None:
+    plt.imshow(lattice)
+    plt.show()
+    return 
 
 def initial_lattice() -> np.array:
     base = build_base_lattice()
-    plt.imshow(base)
-    plt.show()
+    return base
+    # plt.imshow(base)
+    # plt.show()
 
 def build_base_lattice(dim:int = 50) -> np.array:
     base_lattice = default_rng(42).random((dim,dim), dtype='float')
